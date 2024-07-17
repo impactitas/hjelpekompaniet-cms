@@ -1,5 +1,32 @@
 import type { Schema, Attribute } from '@strapi/strapi';
 
+export interface SharedActionButton extends Schema.Component {
+  collectionName: 'components_shared_action_buttons';
+  info: {
+    displayName: 'actionButton';
+    icon: 'cursor';
+  };
+  attributes: {
+    label: Attribute.String & Attribute.Required;
+    variant: Attribute.Enumeration<['primary', 'secondary']>;
+  };
+}
+
+export interface SharedHero extends Schema.Component {
+  collectionName: 'components_shared_heroes';
+  info: {
+    displayName: 'Hero';
+    icon: 'picture';
+    description: '';
+  };
+  attributes: {
+    title: Attribute.String;
+    shortDescription: Attribute.Text;
+    backgroundImage: Attribute.Media & Attribute.Required;
+    actionButtons: Attribute.Component<'shared.action-button', true>;
+  };
+}
+
 export interface SharedMedia extends Schema.Component {
   collectionName: 'components_shared_media';
   info: {
@@ -110,6 +137,8 @@ export interface SharedSlider extends Schema.Component {
 declare module '@strapi/types' {
   export module Shared {
     export interface Components {
+      'shared.action-button': SharedActionButton;
+      'shared.hero': SharedHero;
       'shared.media': SharedMedia;
       'shared.menu-items': SharedMenuItems;
       'shared.quote': SharedQuote;

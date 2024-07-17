@@ -1,0 +1,21 @@
+{
+  "collectionName": "components_shared_action_buttons",
+  "info": {
+    "displayName": "actionButton",
+    "icon": "cursor"
+  },
+  "options": {},
+  "attributes": {
+    "label": {
+      "type": "string",
+      "required": true
+    },
+    "variant": {
+      "type": "enumeration",
+      "enum": [
+        "primary",
+        "secondary"
+      ]
+    }
+  }
+}
