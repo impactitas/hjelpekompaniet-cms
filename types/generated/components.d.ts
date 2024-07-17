@@ -50,6 +50,38 @@ export interface SharedSeo extends Schema.Component {
   };
 }
 
+export interface SharedServiceItem extends Schema.Component {
+  collectionName: 'components_shared_service_items';
+  info: {
+    displayName: 'Service item';
+    icon: 'apps';
+    description: '';
+  };
+  attributes: {
+    title: Attribute.String & Attribute.Required;
+    shortDescription: Attribute.String & Attribute.Required;
+    serviceIcon: Attribute.Media & Attribute.Required;
+    article: Attribute.Relation<
+      'shared.service-item',
+      'oneToOne',
+      'api::article.article'
+    >;
+  };
+}
+
+export interface SharedServiceItmes extends Schema.Component {
+  collectionName: 'components_shared_service_itmes';
+  info: {
+    displayName: 'Service itmes';
+    icon: 'bulletList';
+  };
+  attributes: {
+    items: Attribute.Component<'shared.service-item', true>;
+    title: Attribute.String & Attribute.Required;
+    shortDescription: Attribute.Text;
+  };
+}
+
 export interface SharedSlider extends Schema.Component {
   collectionName: 'components_shared_sliders';
   info: {
@@ -69,6 +101,8 @@ declare module '@strapi/types' {
       'shared.quote': SharedQuote;
       'shared.rich-text': SharedRichText;
       'shared.seo': SharedSeo;
+      'shared.service-item': SharedServiceItem;
+      'shared.service-itmes': SharedServiceItmes;
       'shared.slider': SharedSlider;
     }
   }

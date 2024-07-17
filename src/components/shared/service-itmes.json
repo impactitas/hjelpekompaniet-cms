@@ -1,0 +1,22 @@
+{
+  "collectionName": "components_shared_service_itmes",
+  "info": {
+    "displayName": "Service itmes",
+    "icon": "bulletList"
+  },
+  "options": {},
+  "attributes": {
+    "items": {
+      "type": "component",
+      "repeatable": true,
+      "component": "shared.service-item"
+    },
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "shortDescription": {
+      "type": "text"
+    }
+  }
+}
