@@ -1,0 +1,23 @@
+{
+  "kind": "singleType",
+  "collectionName": "main_menus",
+  "info": {
+    "singularName": "main-menu",
+    "pluralName": "main-menus",
+    "displayName": "MainMenu",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "menuItems": {
+      "displayName": "menuItems",
+      "type": "component",
+      "repeatable": true,
+      "component": "shared.menu-items",
+      "required": true
+    }
+  }
+}

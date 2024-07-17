@@ -11,6 +11,19 @@ export interface SharedMedia extends Schema.Component {
   };
 }
 
+export interface SharedMenuItems extends Schema.Component {
+  collectionName: 'components_shared_menu_items';
+  info: {
+    displayName: 'menuItems';
+    icon: 'bulletList';
+    description: '';
+  };
+  attributes: {
+    label: Attribute.String & Attribute.Required;
+    path: Attribute.String & Attribute.Required;
+  };
+}
+
 export interface SharedQuote extends Schema.Component {
   collectionName: 'components_shared_quotes';
   info: {
@@ -98,6 +111,7 @@ declare module '@strapi/types' {
   export module Shared {
     export interface Components {
       'shared.media': SharedMedia;
+      'shared.menu-items': SharedMenuItems;
       'shared.quote': SharedQuote;
       'shared.rich-text': SharedRichText;
       'shared.seo': SharedSeo;
