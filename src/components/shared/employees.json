@@ -1,0 +1,18 @@
+{
+  "collectionName": "components_shared_employees",
+  "info": {
+    "displayName": "Employees",
+    "icon": "emotionHappy"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "shortDescription": {
+      "type": "text",
+      "required": true
+    }
+  }
+}

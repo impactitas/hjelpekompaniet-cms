@@ -2,7 +2,8 @@
   "collectionName": "components_shared_action_buttons",
   "info": {
     "displayName": "actionButton",
-    "icon": "cursor"
+    "icon": "cursor",
+    "description": ""
   },
   "options": {},
   "attributes": {
@@ -16,6 +17,11 @@
         "primary",
         "secondary"
       ]
+    },
+    "path": {
+      "type": "string",
+      "required": true,
+      "default": "/"
     }
   }
 }

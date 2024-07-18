@@ -1,0 +1,24 @@
+{
+  "collectionName": "components_shared_references",
+  "info": {
+    "displayName": "references",
+    "icon": "crown"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "shortDescription": {
+      "type": "text",
+      "required": true
+    },
+    "referenceItem": {
+      "displayName": "referenceItem",
+      "type": "component",
+      "repeatable": true,
+      "component": "shared.reference-item"
+    }
+  }
+}

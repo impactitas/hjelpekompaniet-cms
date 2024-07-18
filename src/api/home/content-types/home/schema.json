@@ -15,12 +15,11 @@
     "homePage": {
       "type": "dynamiczone",
       "components": [
-        "shared.media",
-        "shared.quote",
-        "shared.rich-text",
         "shared.service-itmes",
-        "shared.slider",
-        "shared.hero"
+        "shared.hero",
+        "shared.contact-form",
+        "shared.employees",
+        "shared.references"
       ],
       "required": true
     },

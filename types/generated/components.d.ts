@@ -5,10 +5,41 @@ export interface SharedActionButton extends Schema.Component {
   info: {
     displayName: 'actionButton';
     icon: 'cursor';
+    description: '';
   };
   attributes: {
     label: Attribute.String & Attribute.Required;
     variant: Attribute.Enumeration<['primary', 'secondary']>;
+    path: Attribute.String & Attribute.Required & Attribute.DefaultTo<'/'>;
+  };
+}
+
+export interface SharedContactForm extends Schema.Component {
+  collectionName: 'components_shared_contact_forms';
+  info: {
+    displayName: 'ContactForm';
+    icon: 'file';
+  };
+  attributes: {
+    title: Attribute.String & Attribute.Required;
+    shortDescription: Attribute.Text & Attribute.Required;
+    phone: Attribute.String;
+    email: Attribute.String;
+    streetName: Attribute.String;
+    city: Attribute.String;
+    postalCode: Attribute.String;
+  };
+}
+
+export interface SharedEmployees extends Schema.Component {
+  collectionName: 'components_shared_employees';
+  info: {
+    displayName: 'Employees';
+    icon: 'emotionHappy';
+  };
+  attributes: {
+    title: Attribute.String & Attribute.Required;
+    shortDescription: Attribute.Text & Attribute.Required;
   };
 }
 
@@ -60,6 +91,37 @@ export interface SharedQuote extends Schema.Component {
   attributes: {
     title: Attribute.String;
     body: Attribute.Text;
+  };
+}
+
+export interface SharedReferenceItem extends Schema.Component {
+  collectionName: 'components_shared_reference_items';
+  info: {
+    displayName: 'referenceItem';
+    icon: 'bulletList';
+  };
+  attributes: {
+    title: Attribute.String & Attribute.Required;
+    shortDescription: Attribute.Text & Attribute.Required;
+    image: Attribute.Media & Attribute.Required;
+    article: Attribute.Relation<
+      'shared.reference-item',
+      'oneToOne',
+      'api::article.article'
+    >;
+  };
+}
+
+export interface SharedReferences extends Schema.Component {
+  collectionName: 'components_shared_references';
+  info: {
+    displayName: 'references';
+    icon: 'crown';
+  };
+  attributes: {
+    title: Attribute.String & Attribute.Required;
+    shortDescription: Attribute.Text & Attribute.Required;
+    referenceItem: Attribute.Component<'shared.reference-item', true>;
   };
 }
 
@@ -138,10 +200,14 @@ declare module '@strapi/types' {
   export module Shared {
     export interface Components {
       'shared.action-button': SharedActionButton;
+      'shared.contact-form': SharedContactForm;
+      'shared.employees': SharedEmployees;
       'shared.hero': SharedHero;
       'shared.media': SharedMedia;
       'shared.menu-items': SharedMenuItems;
       'shared.quote': SharedQuote;
+      'shared.reference-item': SharedReferenceItem;
+      'shared.references': SharedReferences;
       'shared.rich-text': SharedRichText;
       'shared.seo': SharedSeo;
       'shared.service-item': SharedServiceItem;

@@ -851,18 +851,13 @@ export interface ApiArticleArticle extends Schema.CollectionType {
       'manyToOne',
       'api::author.author'
     >;
-    category: Attribute.Relation<
-      'api::article.article',
-      'manyToOne',
-      'api::category.category'
-    >;
     blocks: Attribute.DynamicZone<
       [
-        'shared.media',
-        'shared.quote',
-        'shared.rich-text',
-        'shared.slider',
-        'shared.hero'
+        'shared.hero',
+        'shared.contact-form',
+        'shared.employees',
+        'shared.references',
+        'shared.media'
       ]
     >;
     createdAt: Attribute.DateTime;
@@ -888,7 +883,7 @@ export interface ApiAuthorAuthor extends Schema.CollectionType {
   info: {
     singularName: 'author';
     pluralName: 'authors';
-    displayName: 'Author';
+    displayName: 'Employee';
     description: 'Create authors for your content';
   };
   options: {
@@ -913,43 +908,6 @@ export interface ApiAuthorAuthor extends Schema.CollectionType {
       Attribute.Private;
     updatedBy: Attribute.Relation<
       'api::author.author',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-  };
-}
-
-export interface ApiCategoryCategory extends Schema.CollectionType {
-  collectionName: 'categories';
-  info: {
-    singularName: 'category';
-    pluralName: 'categories';
-    displayName: 'Category';
-    description: 'Organize your content into categories';
-  };
-  options: {
-    draftAndPublish: false;
-  };
-  attributes: {
-    name: Attribute.String;
-    slug: Attribute.UID;
-    articles: Attribute.Relation<
-      'api::category.category',
-      'oneToMany',
-      'api::article.article'
-    >;
-    description: Attribute.Text;
-    createdAt: Attribute.DateTime;
-    updatedAt: Attribute.DateTime;
-    createdBy: Attribute.Relation<
-      'api::category.category',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-    updatedBy: Attribute.Relation<
-      'api::category.category',
       'oneToOne',
       'admin::user'
     > &
@@ -1005,12 +963,11 @@ export interface ApiHomeHome extends Schema.SingleType {
   attributes: {
     homePage: Attribute.DynamicZone<
       [
-        'shared.media',
-        'shared.quote',
-        'shared.rich-text',
         'shared.service-itmes',
-        'shared.slider',
-        'shared.hero'
+        'shared.hero',
+        'shared.contact-form',
+        'shared.employees',
+        'shared.references'
       ]
     > &
       Attribute.Required;
@@ -1078,7 +1035,6 @@ declare module '@strapi/types' {
       'api::about.about': ApiAboutAbout;
       'api::article.article': ApiArticleArticle;
       'api::author.author': ApiAuthorAuthor;
-      'api::category.category': ApiCategoryCategory;
       'api::global.global': ApiGlobalGlobal;
       'api::home.home': ApiHomeHome;
       'api::main-menu.main-menu': ApiMainMenuMainMenu;
