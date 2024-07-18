@@ -14,6 +14,20 @@ export interface SharedActionButton extends Schema.Component {
   };
 }
 
+export interface SharedBanner extends Schema.Component {
+  collectionName: 'components_shared_banners';
+  info: {
+    displayName: 'Banner';
+    icon: 'message';
+  };
+  attributes: {
+    title: Attribute.String & Attribute.Required;
+    shortDescription: Attribute.Text & Attribute.Required;
+    backgroundImage: Attribute.Media & Attribute.Required;
+    actionButton: Attribute.Component<'shared.action-button'>;
+  };
+}
+
 export interface SharedContactForm extends Schema.Component {
   collectionName: 'components_shared_contact_forms';
   info: {
@@ -200,6 +214,7 @@ declare module '@strapi/types' {
   export module Shared {
     export interface Components {
       'shared.action-button': SharedActionButton;
+      'shared.banner': SharedBanner;
       'shared.contact-form': SharedContactForm;
       'shared.employees': SharedEmployees;
       'shared.hero': SharedHero;

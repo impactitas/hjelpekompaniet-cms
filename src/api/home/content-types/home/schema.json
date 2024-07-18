@@ -19,7 +19,8 @@
         "shared.hero",
         "shared.contact-form",
         "shared.employees",
-        "shared.references"
+        "shared.references",
+        "shared.banner"
       ],
       "required": true
     },

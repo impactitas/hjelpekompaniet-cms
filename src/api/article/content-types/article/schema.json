@@ -46,7 +46,9 @@
         "shared.contact-form",
         "shared.employees",
         "shared.references",
-        "shared.media"
+        "shared.media",
+        "shared.banner",
+        "shared.rich-text"
       ]
     }
   }
