@@ -96,6 +96,17 @@ export interface SharedMenuItems extends Schema.Component {
   };
 }
 
+export interface SharedParagraph extends Schema.Component {
+  collectionName: 'components_shared_paragraphs';
+  info: {
+    displayName: 'Paragraph';
+    icon: 'bulletList';
+  };
+  attributes: {
+    text: Attribute.Text & Attribute.Required;
+  };
+}
+
 export interface SharedQuote extends Schema.Component {
   collectionName: 'components_shared_quotes';
   info: {
@@ -210,6 +221,18 @@ export interface SharedSlider extends Schema.Component {
   };
 }
 
+export interface SharedTitle extends Schema.Component {
+  collectionName: 'components_shared_titles';
+  info: {
+    displayName: 'title';
+    icon: 'filter';
+  };
+  attributes: {
+    title: Attribute.String & Attribute.Required;
+    variant: Attribute.Enumeration<['h1', 'h2', 'h3']>;
+  };
+}
+
 declare module '@strapi/types' {
   export module Shared {
     export interface Components {
@@ -220,6 +243,7 @@ declare module '@strapi/types' {
       'shared.hero': SharedHero;
       'shared.media': SharedMedia;
       'shared.menu-items': SharedMenuItems;
+      'shared.paragraph': SharedParagraph;
       'shared.quote': SharedQuote;
       'shared.reference-item': SharedReferenceItem;
       'shared.references': SharedReferences;
@@ -228,6 +252,7 @@ declare module '@strapi/types' {
       'shared.service-item': SharedServiceItem;
       'shared.service-itmes': SharedServiceItmes;
       'shared.slider': SharedSlider;
+      'shared.title': SharedTitle;
     }
   }
 }
