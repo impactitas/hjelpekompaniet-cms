@@ -859,7 +859,9 @@ export interface ApiArticleArticle extends Schema.CollectionType {
         'shared.references',
         'shared.media',
         'shared.banner',
-        'shared.rich-text'
+        'shared.rich-text',
+        'shared.paragraph',
+        'shared.title'
       ]
     >;
     createdAt: Attribute.DateTime;
