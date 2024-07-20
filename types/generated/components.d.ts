@@ -103,9 +103,12 @@ export interface SharedParagraph extends Schema.Component {
   info: {
     displayName: 'Paragraph';
     icon: 'bulletList';
+    description: '';
   };
   attributes: {
     text: Attribute.Text & Attribute.Required;
+    containerSize: Attribute.Enumeration<['small', 'large']> &
+      Attribute.DefaultTo<'large'>;
   };
 }
 
@@ -228,10 +231,13 @@ export interface SharedTitle extends Schema.Component {
   info: {
     displayName: 'title';
     icon: 'filter';
+    description: '';
   };
   attributes: {
     title: Attribute.String & Attribute.Required;
     variant: Attribute.Enumeration<['h1', 'h2', 'h3']>;
+    containerSize: Attribute.Enumeration<['small', 'largre']> &
+      Attribute.DefaultTo<'largre'>;
   };
 }
 
