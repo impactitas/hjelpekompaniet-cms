@@ -33,6 +33,7 @@ export interface SharedContactForm extends Schema.Component {
   info: {
     displayName: 'ContactForm';
     icon: 'file';
+    description: '';
   };
   attributes: {
     title: Attribute.String & Attribute.Required;
@@ -42,6 +43,7 @@ export interface SharedContactForm extends Schema.Component {
     streetName: Attribute.String;
     city: Attribute.String;
     postalCode: Attribute.String;
+    contactFormText: Attribute.Text;
   };
 }
 
