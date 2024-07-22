@@ -44,6 +44,7 @@ export interface SharedContactForm extends Schema.Component {
     city: Attribute.String;
     postalCode: Attribute.String;
     contactFormText: Attribute.Text;
+    contactFormTitle: Attribute.String;
   };
 }
 
