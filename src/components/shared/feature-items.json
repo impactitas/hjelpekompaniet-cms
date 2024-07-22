@@ -1,0 +1,23 @@
+{
+  "collectionName": "components_shared_feature_items",
+  "info": {
+    "displayName": "FeatureItems",
+    "icon": "bulletList"
+  },
+  "options": {},
+  "attributes": {
+    "items": {
+      "type": "component",
+      "repeatable": true,
+      "component": "shared.featured-item"
+    },
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "shortDescription": {
+      "type": "text",
+      "required": true
+    }
+  }
+}

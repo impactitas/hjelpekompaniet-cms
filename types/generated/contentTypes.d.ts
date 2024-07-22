@@ -930,13 +930,13 @@ export interface ApiHomeHome extends Schema.SingleType {
   attributes: {
     homePage: Attribute.DynamicZone<
       [
-        'shared.service-itmes',
         'shared.hero',
         'shared.contact-form',
         'shared.employees',
         'shared.references',
         'shared.banner',
-        'shared.faq'
+        'shared.faq',
+        'shared.feature-items'
       ]
     > &
       Attribute.Required;

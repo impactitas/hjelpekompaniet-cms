@@ -85,6 +85,37 @@ export interface SharedFaq extends Schema.Component {
   };
 }
 
+export interface SharedFeatureItems extends Schema.Component {
+  collectionName: 'components_shared_feature_items';
+  info: {
+    displayName: 'FeatureItems';
+    icon: 'bulletList';
+  };
+  attributes: {
+    items: Attribute.Component<'shared.featured-item', true>;
+    title: Attribute.String & Attribute.Required;
+    shortDescription: Attribute.Text & Attribute.Required;
+  };
+}
+
+export interface SharedFeaturedItem extends Schema.Component {
+  collectionName: 'components_shared_featured_items';
+  info: {
+    displayName: 'FeaturedItem';
+    icon: 'bulletList';
+  };
+  attributes: {
+    title: Attribute.String & Attribute.Required;
+    shortDescription: Attribute.Text & Attribute.Required;
+    serviceIcon: Attribute.Media & Attribute.Required;
+    article: Attribute.Relation<
+      'shared.featured-item',
+      'oneToOne',
+      'api::article.article'
+    >;
+  };
+}
+
 export interface SharedHero extends Schema.Component {
   collectionName: 'components_shared_heroes';
   info: {
@@ -276,6 +307,8 @@ declare module '@strapi/types' {
       'shared.employees': SharedEmployees;
       'shared.fag-item': SharedFagItem;
       'shared.faq': SharedFaq;
+      'shared.feature-items': SharedFeatureItems;
+      'shared.featured-item': SharedFeaturedItem;
       'shared.hero': SharedHero;
       'shared.media': SharedMedia;
       'shared.menu-items': SharedMenuItems;
