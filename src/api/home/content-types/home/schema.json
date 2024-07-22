@@ -20,7 +20,8 @@
         "shared.contact-form",
         "shared.employees",
         "shared.references",
-        "shared.banner"
+        "shared.banner",
+        "shared.faq"
       ],
       "required": true
     },

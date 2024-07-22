@@ -51,7 +51,8 @@
         "shared.rich-text",
         "shared.paragraph",
         "shared.title",
-        "shared.service-itmes"
+        "shared.service-itmes",
+        "shared.faq"
       ]
     }
   }

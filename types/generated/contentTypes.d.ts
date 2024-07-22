@@ -823,7 +823,8 @@ export interface ApiArticleArticle extends Schema.CollectionType {
         'shared.rich-text',
         'shared.paragraph',
         'shared.title',
-        'shared.service-itmes'
+        'shared.service-itmes',
+        'shared.faq'
       ]
     >;
     createdAt: Attribute.DateTime;
@@ -934,7 +935,8 @@ export interface ApiHomeHome extends Schema.SingleType {
         'shared.contact-form',
         'shared.employees',
         'shared.references',
-        'shared.banner'
+        'shared.banner',
+        'shared.faq'
       ]
     > &
       Attribute.Required;

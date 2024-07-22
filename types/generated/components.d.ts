@@ -60,6 +60,31 @@ export interface SharedEmployees extends Schema.Component {
   };
 }
 
+export interface SharedFagItem extends Schema.Component {
+  collectionName: 'components_shared_fag_items';
+  info: {
+    displayName: 'fagItem';
+    icon: 'bulletList';
+  };
+  attributes: {
+    title: Attribute.String & Attribute.Required;
+    text: Attribute.Text & Attribute.Required;
+  };
+}
+
+export interface SharedFaq extends Schema.Component {
+  collectionName: 'components_shared_faqs';
+  info: {
+    displayName: 'faq';
+    icon: 'bulletList';
+  };
+  attributes: {
+    title: Attribute.String & Attribute.Required;
+    shortDescription: Attribute.Text & Attribute.Required;
+    items: Attribute.Component<'shared.fag-item', true>;
+  };
+}
+
 export interface SharedHero extends Schema.Component {
   collectionName: 'components_shared_heroes';
   info: {
@@ -249,6 +274,8 @@ declare module '@strapi/types' {
       'shared.banner': SharedBanner;
       'shared.contact-form': SharedContactForm;
       'shared.employees': SharedEmployees;
+      'shared.fag-item': SharedFagItem;
+      'shared.faq': SharedFaq;
       'shared.hero': SharedHero;
       'shared.media': SharedMedia;
       'shared.menu-items': SharedMenuItems;
