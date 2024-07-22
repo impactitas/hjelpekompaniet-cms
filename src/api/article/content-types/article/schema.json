@@ -50,7 +50,8 @@
         "shared.banner",
         "shared.rich-text",
         "shared.paragraph",
-        "shared.title"
+        "shared.title",
+        "shared.service-itmes"
       ]
     }
   }
