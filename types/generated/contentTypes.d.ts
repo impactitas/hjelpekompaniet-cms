@@ -823,10 +823,11 @@ export interface ApiArticleArticle extends Schema.CollectionType {
         'shared.rich-text',
         'shared.paragraph',
         'shared.title',
-        'shared.service-itmes',
-        'shared.faq'
+        'shared.faq',
+        'shared.feature-items'
       ]
     >;
+    Seo: Attribute.Component<'shared.seo'>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
