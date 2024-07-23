@@ -827,7 +827,7 @@ export interface ApiArticleArticle extends Schema.CollectionType {
         'shared.feature-items'
       ]
     >;
-    Seo: Attribute.Component<'shared.seo'>;
+    seo: Attribute.Component<'shared.seo'>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;

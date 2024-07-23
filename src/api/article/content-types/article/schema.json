@@ -55,7 +55,7 @@
         "shared.feature-items"
       ]
     },
-    "Seo": {
+    "seo": {
       "type": "component",
       "repeatable": false,
       "component": "shared.seo"
